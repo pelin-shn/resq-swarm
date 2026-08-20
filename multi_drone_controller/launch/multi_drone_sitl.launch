@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="multi_drone_controller" type="drone_node.py" name="drone_1_controller">
+        <param name="drone_id" value="1"/>
+    </node>
+
+    <node pkg="multi_drone_controller" type="drone_node.py" name="drone_2_controller">
+        <param name="drone_id" value="2"/>
+    </node>
+
+    <node pkg="multi_drone_controller" type="drone_node.py" name="drone_3_controller">
+        <param name="drone_id" value="3"/>
+    </node>
+</launch>

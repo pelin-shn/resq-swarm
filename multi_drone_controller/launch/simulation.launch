@@ -1,0 +1,27 @@
+<launch>
+<rosparam command="load"
+file="$(find multi_drone_controller)/config/mission.yaml"/>
+    <!-- Gazebo Dünyasını Başlat -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+       <arg name="world_name"
+     value="$(find multi_drone_gazebo)/worlds/search_rescue.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+    </include>
+
+    <!-- Drone 1 Kontrolcü -->
+    <node name="drone_1_controller" pkg="multi_drone_controller" type="drone_node.py" output="screen">
+        <param name="drone_id" value="1"/>
+    </node>
+
+    <!-- Drone 2 Kontrolcü -->
+    <node name="drone_2_controller" pkg="multi_drone_controller" type="drone_node.py" output="screen">
+        <param name="drone_id" value="2"/>
+    </node>
+
+    <!-- Drone 3 Kontrolcü -->
+    <node name="drone_3_controller" pkg="multi_drone_controller" type="drone_node.py" output="screen">
+        <param name="drone_id" value="3"/>
+    </node>
+</launch>

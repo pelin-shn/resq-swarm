@@ -1,0 +1,11 @@
+search_area:
+  xmin: 0
+  xmax: 30
+  ymin: 0
+  ymax: 10
+
+drones: 3
+
+critical_battery: 20
+
+detection_radius: 3.0

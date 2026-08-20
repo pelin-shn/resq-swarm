@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="search_rescue_world">
+    <model name="search_area">
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>30 10 0.02</size></box></geometry>
+          <material>
+            <ambient>0.1 0.6 0.1 1</ambient>
+            <diffuse>0.1 0.8 0.1 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry><box><size>30 10 0.02</size></box></geometry>
+        </collision>
+      </link>
+      <pose>15 5 0.01 0 0 0</pose>
+    </model>
+
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <include>
+      <uri>model://person_standing</uri>
+      <pose>10 5 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://iris_with_ardupilot</uri>
+      <name>drone1</name>
+      <pose>0 0 0.2 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://iris_with_ardupilot</uri>
+      <name>drone2</name>
+      <pose>10 0 0.2 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://iris_with_ardupilot</uri>
+      <name>drone3</name>
+      <pose>20 0 0.2 0 0 0</pose>
+    </include>
+  </world>
+</sdf>
